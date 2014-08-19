@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iCarousel.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<iCarouselDelegate, iCarouselDataSource, UIGestureRecognizerDelegate>
 
+@property (nonatomic, strong) IBOutlet iCarousel *carousel;
+@property (nonatomic,strong) NSMutableArray *itemsArray;
 
 @end
 
