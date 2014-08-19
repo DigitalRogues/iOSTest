@@ -29,6 +29,7 @@
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.ignorePerpendicularSwipes = NO;
     self.carousel.pagingEnabled = YES;
+    self.carousel.decelerationRate = 0.5f;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -59,6 +60,11 @@
             return YES;
         }
             
+        case iCarouselOptionOffsetMultiplier:
+        {
+            return 0.5;
+        }
+            
         default:
             return value;
     }
@@ -80,6 +86,9 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
+        //create the bounds view
+        
+        
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
         ((UIImageView *)view).image = [UIImage imageNamed:@"smallCardBG"];
         view.contentMode = UIViewContentModeScaleToFill;
@@ -90,6 +99,9 @@
         label.font = [label.font fontWithSize:50];
         label.tag = 1;
         [view addSubview:label];
+        
+        
+
         UIPanGestureRecognizer * recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(trackPan:)];
         recognizer.delegate = self;
         [view addGestureRecognizer:recognizer];
@@ -119,12 +131,18 @@
 }
 -(void)trackPan:(UIPanGestureRecognizer *)recognizer
 {
-    
-    NSLog(@"%@",recognizer);
+
     CGPoint translation = [recognizer translationInView:self.view];
-    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
-                                         recognizer.view.center.y + translation.y);
-    [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+    CGPoint newCenter = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
+
+        //limit pan to short range
+    if (newCenter.y >= 99 && newCenter.y <= 150) {
+        NSLog(@"%f",newCenter.y);
+        recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
+        [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+        //    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
+        //                                         recognizer.view.center.y + translation.y);
+    }
     
     
 }
