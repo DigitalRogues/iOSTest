@@ -29,7 +29,6 @@
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.ignorePerpendicularSwipes = NO;
     self.carousel.pagingEnabled = YES;
-    self.carousel.decelerationRate = 0.5f;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -62,10 +61,10 @@
             
         case iCarouselOptionOffsetMultiplier:
         {
-            return 0.5;
+            return 0.05;
         }
             
-        default:
+            default:
             return value;
     }
     
@@ -136,7 +135,7 @@
     CGPoint newCenter = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
 
         //limit pan to short range
-    if (newCenter.y >= 99 && newCenter.y <= 150) {
+    if (newCenter.y >= 98 && newCenter.y <= 160) {
         NSLog(@"%f",newCenter.y);
         recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
         [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
