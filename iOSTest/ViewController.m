@@ -29,6 +29,9 @@
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.ignorePerpendicularSwipes = NO;
     self.carousel.pagingEnabled = YES;
+    self.recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(trackPan:)];
+    self.recognizer.delegate = self;
+    [self.carousel addGestureRecognizer:self.recognizer];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -37,11 +40,12 @@
 
 #pragma mark - iCarousel Methods
 
+
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
     NSLog(@"%@",carousel.currentItemView);
-    for (UIGestureRecognizer *g in carousel.currentItemView.gestureRecognizers) {
-        NSLog(@"g %@", g);
+    for (UIGestureRecognizer *gesture in carousel.currentItemView.gestureRecognizers) {
+        NSLog(@"gesture %@", gesture);
     }
 }
 
@@ -61,7 +65,22 @@
             
         case iCarouselOptionOffsetMultiplier:
         {
-            return 0.05;
+            return 0.23;
+        }
+        
+        case iCarouselOptionFadeMin:
+        {
+            return 0;
+        }
+            
+        case iCarouselOptionFadeMax:
+        {
+            return 0;
+        }
+            
+        case iCarouselOptionFadeMinAlpha:
+        {
+            return 0.5;
         }
             
             default:
@@ -99,13 +118,6 @@
         label.tag = 1;
         [view addSubview:label];
         
-        
-
-        UIPanGestureRecognizer * recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(trackPan:)];
-        recognizer.delegate = self;
-        [view addGestureRecognizer:recognizer];
-        
-        
     }
     else
     {
@@ -128,23 +140,56 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@",touches);
+    
+}
+
+
 -(void)trackPan:(UIPanGestureRecognizer *)recognizer
 {
+   
 
+    
+    
     CGPoint translation = [recognizer translationInView:self.view];
     CGPoint newCenter = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
-
-        //limit pan to short range
-    if (newCenter.y >= 98 && newCenter.y <= 160) {
-        NSLog(@"%f",newCenter.y);
+    //NSLog(@"%f",newCenter.y);
+        //limit pan to short range, hardcoded, I know there's a better way, jsut getting it working for now.
+    if (newCenter.y >= 398 && newCenter.y <= 480) {
+        
         recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
         [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+        
+        
         //    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
         //                                         recognizer.view.center.y + translation.y);
     }
     
+    NSLog(@"%f",translation.y);
     
-}
+    CGPoint lastCenter;
+
+    double newAlpha = self.envoyLabel.alpha;
+    if (translation.y >=0)
+    {   NSLog(@"Down");
+        newAlpha = MIN(newAlpha + 0.1,2.0);
+        self.envoyLabel.alpha = newAlpha;
+    }
+    else if (translation.y < 0)
+    {
+        NSLog(@"Up");
+        newAlpha = MAX(newAlpha - 0.1,0);
+        self.envoyLabel.alpha = newAlpha;
+    }
+   
+    lastCenter = newCenter;
+    
+    
+    }
 
 
 

@@ -13,6 +13,9 @@
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (nonatomic,strong) NSMutableArray *itemsArray;
+@property (nonatomic,strong) UIPanGestureRecognizer *recognizer;
+@property (weak, nonatomic) IBOutlet UILabel *envoyLabel;
+
 
 @end
 
