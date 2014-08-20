@@ -31,6 +31,12 @@
     self.carousel.pagingEnabled = YES;
     self.recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(trackPan:)];
     self.recognizer.delegate = self;
+    
+    for (UIGestureRecognizer *gesture in self.carousel.currentItemView.gestureRecognizers) {
+        [self.recognizer requireGestureRecognizerToFail:gesture];
+    }
+
+    
     [self.carousel addGestureRecognizer:self.recognizer];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -138,9 +144,11 @@
 #pragma mark - gesture methods
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (self.recognizer.state == (UIGestureRecognizerStateBegan | UIGestureRecognizerStateChanged) ) {
+        return NO;
+    }
     return YES;
 }
-
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -152,7 +160,7 @@
 -(void)trackPan:(UIPanGestureRecognizer *)recognizer
 {
    
-
+    
     
     
     CGPoint translation = [recognizer translationInView:self.view];
@@ -176,7 +184,7 @@
     double newAlpha = self.envoyLabel.alpha;
     if (translation.y >=0)
     {   NSLog(@"Down");
-        newAlpha = MIN(newAlpha + 0.1,2.0);
+        newAlpha = MIN(newAlpha + 0.5,2.0);
         self.envoyLabel.alpha = newAlpha;
     }
     else if (translation.y < 0)
