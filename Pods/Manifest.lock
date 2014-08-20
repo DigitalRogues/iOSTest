@@ -1,10 +1,16 @@
 PODS:
   - iCarousel (1.8)
+  - pop (1.0.6)
+  - VBFPopFlatButton (0.0.2):
+    - pop
 
 DEPENDENCIES:
   - iCarousel
+  - VBFPopFlatButton
 
 SPEC CHECKSUMS:
   iCarousel: cf77aea48dfcde9a0cd85569a1d8a9b6dd543bd7
+  pop: e518794da38942c05255eb64b36d894e70cb4f00
+  VBFPopFlatButton: cfcf19a4ca46ca2b3e3ca377aa326040559a72f2
 
 COCOAPODS: 0.33.1

@@ -3,7 +3,7 @@
 
 target "iOSTest" do
 pod 'iCarousel'
-
+pod 'VBFPopFlatButton'
 
 end
 

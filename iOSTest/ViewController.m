@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+
+
+
 @interface ViewController ()
 
 @end
@@ -35,14 +38,40 @@
     for (UIGestureRecognizer *gesture in self.carousel.currentItemView.gestureRecognizers) {
         [self.recognizer requireGestureRecognizerToFail:gesture];
     }
-
-    
     [self.carousel addGestureRecognizer:self.recognizer];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    self.menuButton  = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(275, 20, 30, 30)
+                                                                           buttonType:buttonMenuType
+                                                                          buttonStyle:buttonRoundedStyle];
+    self.menuButton.roundBackgroundColor = [UIColor whiteColor];
+    self.menuButton.lineThickness = 2;
+    self.menuButton.linesColor = [UIColor blueColor];
+    [self.menuButton addTarget:self
+                               action:@selector(menuButtonPressed)
+                     forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.menuButton];
+    
 }
 
+-(void)menuButtonPressed
+{
+    if (self.menuButton.currentButtonType == buttonMenuType) {
+        self.menuButton.currentButtonType = buttonCloseType;
+        [self.menuButton animateToType:buttonCloseType];
+        [self performSegueWithIdentifier:@"menuSegue" sender:nil];
+        self.menuButton.currentButtonType = buttonMenuType;
+         [self.menuButton animateToType:buttonMenuType];
 
-
+    }
+    
+    else if (self.menuButton.currentButtonType == buttonCloseType)
+    {
+        self.menuButton.currentButtonType = buttonMenuType;
+        [self.menuButton animateToType:buttonMenuType];
+    }
+}
 
 #pragma mark - iCarousel Methods
 
@@ -71,7 +100,7 @@
             
         case iCarouselOptionOffsetMultiplier:
         {
-            return 0.20;
+            return 0.15;
         }
         
         case iCarouselOptionFadeMin:
@@ -162,44 +191,58 @@
 
 -(void)trackPan:(UIPanGestureRecognizer *)recognizer
 {
-   
-    
-    
+
     
     CGPoint translation = [recognizer translationInView:self.view];
     CGPoint newCenter = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
-    //NSLog(@"%f",newCenter.y);
+
+    
+   // NSLog(@"%f",newCenter.y);
         //limit pan to short range, hardcoded, I know there's a better way, jsut getting it working for now.
-    if (newCenter.y >= 398 && newCenter.y <= 480) {
-        
-        recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
-        [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
-        
-        
-        //    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
-        //                                         recognizer.view.center.y + translation.y);
+//    if (newCenter.y >= 398 && newCenter.y <= 480) {
+//        
+//        recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
+//        [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+//        
+//        
+//        //    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
+//        //                                         recognizer.view.center.y + translation.y);
+//    }
+    
+    
+    //hardcode ipad mini and iphone 5 variables
+    NSString *deviceType = [UIDevice currentDevice].model;
+    if([deviceType isEqualToString:@"iPhone"])
+        {   // it's an iPhone
+            if (newCenter.y >= 398 && newCenter.y <= 480) {
+                recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
+                [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+            }
+        }
+    else
+    
+        if (newCenter.y >= 503 && newCenter.y <= 651) {
+            recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
+            [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+
     }
     
-    NSLog(@"%f",translation.y);
-    
-    CGPoint lastCenter;
 
     double newAlpha = self.envoyLabel.alpha;
     if (translation.y >=0)
-    {   NSLog(@"Down");
-        newAlpha = MIN(newAlpha + 0.5,2.0);
+    {   //NSLog(@"Down");
+        newAlpha = MIN(newAlpha + 0.1,2.0);
         self.envoyLabel.alpha = newAlpha;
     }
     else if (translation.y < 0)
     {
-        NSLog(@"Up");
-        newAlpha = MAX(newAlpha - 0.1,0);
+        //NSLog(@"Up");
+        newAlpha = MAX(newAlpha - 0.4,0);
         self.envoyLabel.alpha = newAlpha;
     }
    
-    lastCenter = newCenter;
-    
-    
+
+
     }
 
 

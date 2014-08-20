@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <iCarousel.h>
+#import <VBFPopFlatButton.h>
 
 @interface ViewController : UIViewController<iCarouselDelegate, iCarouselDataSource, UIGestureRecognizerDelegate>
 
@@ -15,6 +16,7 @@
 @property (nonatomic,strong) NSMutableArray *itemsArray;
 @property (nonatomic,strong) UIPanGestureRecognizer *recognizer;
 @property (weak, nonatomic) IBOutlet UILabel *envoyLabel;
+@property (strong, nonatomic) IBOutlet VBFPopFlatButton *menuButton;
 
 
 @end
