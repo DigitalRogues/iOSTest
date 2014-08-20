@@ -71,7 +71,7 @@
             
         case iCarouselOptionOffsetMultiplier:
         {
-            return 0.23;
+            return 0.20;
         }
         
         case iCarouselOptionFadeMin:
@@ -143,10 +143,13 @@
 
 #pragma mark - gesture methods
 
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)panGestureRecognizer {
+    CGPoint velocity = [panGestureRecognizer velocityInView:self.carousel];
+    return fabs(velocity.y) > fabs(velocity.x);
+}
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if (self.recognizer.state == (UIGestureRecognizerStateBegan | UIGestureRecognizerStateChanged) ) {
-        return NO;
-    }
+
     return YES;
 }
 
