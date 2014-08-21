@@ -44,8 +44,15 @@
 
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Ocean_park_wiki-2.jpg"]];
-    self.blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width,[[UIScreen mainScreen] bounds].size.height)];
-
+    
+    NSString *deviceType = [UIDevice currentDevice].model;
+    if([deviceType isEqualToString:@"iPhone"])
+    {
+        self.blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, [[UIScreen mainScreen] bounds].size.width,[[UIScreen mainScreen] bounds].size.height)];
+    }
+    else {
+    self.blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, [[UIScreen mainScreen] bounds].size.height,[[UIScreen mainScreen] bounds].size.width)];
+    }
     self.blurView.underlyingView = self.view;
     
     [self.view addSubview:self.blurView];
@@ -266,21 +273,9 @@
     CGPoint translation = [recognizer translationInView:self.view];
     CGPoint newCenter = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
 
+
     
-   // NSLog(@"%f",newCenter.y);
-        //limit pan to short range, hardcoded, I know there's a better way, jsut getting it working for now.
-//    if (newCenter.y >= 398 && newCenter.y <= 480) {
-//        
-//        recognizer.view.center = CGPointMake(recognizer.view.center.x, recognizer.view.center.y + translation.y);
-//        [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
-//        
-//        
-//        //    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
-//        //                                         recognizer.view.center.y + translation.y);
-//    }
-    
-    
-    //hardcode ipad mini and iphone 5 variables
+    //hardcode ipad mini landscape and iphone 5 portrait variables
     NSString *deviceType = [UIDevice currentDevice].model;
     if([deviceType isEqualToString:@"iPhone"])
         {   // it's an iPhone
