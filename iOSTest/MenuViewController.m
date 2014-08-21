@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self buildHamburger];
+    [self setUpConstraints];
+
+}
+
+-(void)buildHamburger
+{
     self.menuButton  = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(275, 20, 30, 30)
                                                    buttonType:buttonCloseType
                                                   buttonStyle:buttonRoundedStyle];
@@ -27,8 +34,30 @@
                         action:@selector(menuButtonPressed)
               forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.menuButton];
-
 }
+
+-(void)setUpConstraints
+{
+    
+    
+    
+    self.menuButton.translatesAutoresizingMaskIntoConstraints = NO;
+    NSArray *upperConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_menuButton]"
+                                                                       options:0
+                                                                       metrics:nil
+                                                                         views:NSDictionaryOfVariableBindings(_menuButton)];
+    
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_menuButton]-20-|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:NSDictionaryOfVariableBindings(_menuButton)];
+    
+    
+    [self.view addConstraints:constraints];
+    [self.view addConstraints:upperConstraint];
+    
+}
+
 
 -(void)menuButtonPressed
 {
