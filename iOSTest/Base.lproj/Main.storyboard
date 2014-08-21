@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iTB-gl-VOk">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
@@ -24,16 +23,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phf-JA-rf3" customClass="VBFPopFlatButton">
-                                <rect key="frame" x="538" y="20" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="2d2-bj-0A4"/>
-                                    <constraint firstAttribute="height" constant="30" id="cfE-sg-ExG"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aO7-cP-Weh" customClass="iCarousel">
                                 <rect key="frame" x="0.0" y="225" width="600" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -52,12 +41,10 @@
                             <constraint firstItem="aO7-cP-Weh" firstAttribute="top" secondItem="T0j-LW-KFE" secondAttribute="bottom" priority="250" constant="111" id="Qne-uD-3Pf"/>
                             <constraint firstAttribute="bottomMargin" secondItem="aO7-cP-Weh" secondAttribute="bottom" id="Ypf-45-6z2"/>
                             <constraint firstAttribute="centerX" secondItem="T0j-LW-KFE" secondAttribute="centerX" constant="-0.5" id="fPN-IN-ktM"/>
-                            <constraint firstItem="T0j-LW-KFE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="73" id="jCM-cp-0dh"/>
+                            <constraint firstItem="T0j-LW-KFE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="jCM-cp-0dh"/>
                             <constraint firstItem="aO7-cP-Weh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="205" id="nPU-03-8mm"/>
                             <constraint firstAttribute="centerX" secondItem="aO7-cP-Weh" secondAttribute="centerX" id="pvp-i8-pbO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aO7-cP-Weh" secondAttribute="trailing" constant="-16" id="pyK-Ye-TqQ"/>
-                            <constraint firstItem="phf-JA-rf3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uu6-DI-zgO"/>
-                            <constraint firstItem="phf-JA-rf3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zyU-HF-KwT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -65,16 +52,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="jZH-zm-Cou"/>
                     <connections>
                         <outlet property="carousel" destination="aO7-cP-Weh" id="3cB-Sf-aEq"/>
                         <outlet property="envoyLabel" destination="T0j-LW-KFE" id="zTr-i3-5Mu"/>
-                        <outlet property="menuButton" destination="phf-JA-rf3" id="EUh-sz-e68"/>
-                        <segue destination="uTu-bt-xBg" kind="presentation" identifier="menuSegue" modalTransitionStyle="crossDissolve" id="oqk-Wv-hqv"/>
+                        <segue destination="uTu-bt-xBg" kind="show" identifier="menuSegue" id="oqk-Wv-hqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485" y="132"/>
+            <point key="canvasLocation" x="1297" y="132"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ehn-yH-UAx">
@@ -92,7 +79,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11J-EY-Zdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="105"/>
+            <point key="canvasLocation" x="2068" y="105"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ffh-ln-Cze">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iTB-gl-VOk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gLK-jr-hdm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wSq-3s-V0P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xao-kg-cfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485" y="132"/>
         </scene>
     </scenes>
 </document>

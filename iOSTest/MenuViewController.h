@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <VBFPopFlatButton.h>
+//#import <VBFPopFlatButton.h>
+#import <FRDLivelyButton.h>
 @interface MenuViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet VBFPopFlatButton *menuButton;
+//@property (strong, nonatomic) IBOutlet VBFPopFlatButton *menuButton;
+@property (nonatomic,strong) FRDLivelyButton *menuButton;
 @end

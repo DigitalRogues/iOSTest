@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D3497F5736A4581B2E16BE6 /* libPods-iOSTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 177173797F5A4AC5BB36169E /* libPods-iOSTest.a */; };
+		BC07050519A5844000984A5E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC07050419A5844000984A5E /* Accelerate.framework */; };
+		BC07050919A58DD500984A5E /* Ocean_park_wiki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC07050819A58DD500984A5E /* Ocean_park_wiki.jpg */; };
+		BC07050B19A58EEC00984A5E /* Ocean_park_wiki-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */; };
 		BC4827A719A2D5A200CF7904 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827A619A2D5A200CF7904 /* main.m */; };
 		BC4827AA19A2D5A200CF7904 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827A919A2D5A200CF7904 /* AppDelegate.m */; };
 		BC4827AD19A2D5A200CF7904 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827AC19A2D5A200CF7904 /* ViewController.m */; };
@@ -16,8 +19,6 @@
 		BC4827BE19A2D5A300CF7904 /* iOSTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827BD19A2D5A300CF7904 /* iOSTestTests.m */; };
 		BC4827CA19A2DFAE00CF7904 /* smallCardBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */; };
 		CAF6337F19A5296300C9BEE7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF6337E19A5296300C9BEE7 /* MenuViewController.m */; };
-		CAF6338219A5720300C9BEE7 /* green_dust_scratch_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF6338019A5720300C9BEE7 /* green_dust_scratch_@2X.png */; };
-		CAF6338319A5720300C9BEE7 /* green_dust_scratch.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF6338119A5720300C9BEE7 /* green_dust_scratch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,9 @@
 /* Begin PBXFileReference section */
 		177173797F5A4AC5BB36169E /* libPods-iOSTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FEF9BC55484B4EA7C2E30C /* Pods-iOSTest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTest.xcconfig"; path = "Pods/Pods-iOSTest.xcconfig"; sourceTree = "<group>"; };
+		BC07050419A5844000984A5E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BC07050819A58DD500984A5E /* Ocean_park_wiki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ocean_park_wiki.jpg; sourceTree = "<group>"; };
+		BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ocean_park_wiki-2.jpg"; sourceTree = "<group>"; };
 		BC4827A119A2D5A200CF7904 /* iOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4827A519A2D5A200CF7904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC4827A619A2D5A200CF7904 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -48,8 +52,6 @@
 		BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallCardBG@2x.png"; sourceTree = "<group>"; };
 		CAF6337D19A5296300C9BEE7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		CAF6337E19A5296300C9BEE7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		CAF6338019A5720300C9BEE7 /* green_dust_scratch_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_dust_scratch_@2X.png"; sourceTree = "<group>"; };
-		CAF6338119A5720300C9BEE7 /* green_dust_scratch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_dust_scratch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC07050519A5844000984A5E /* Accelerate.framework in Frameworks */,
 				0D3497F5736A4581B2E16BE6 /* libPods-iOSTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +77,7 @@
 		7A23D6A5CCC64CBD80614BBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC07050419A5844000984A5E /* Accelerate.framework */,
 				177173797F5A4AC5BB36169E /* libPods-iOSTest.a */,
 			);
 			name = Frameworks;
@@ -121,8 +125,8 @@
 		BC4827A419A2D5A200CF7904 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CAF6338019A5720300C9BEE7 /* green_dust_scratch_@2X.png */,
-				CAF6338119A5720300C9BEE7 /* green_dust_scratch.png */,
+				BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */,
+				BC07050819A58DD500984A5E /* Ocean_park_wiki.jpg */,
 				BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */,
 				BC4827A519A2D5A200CF7904 /* Info.plist */,
 				BC4827A619A2D5A200CF7904 /* main.m */,
@@ -229,11 +233,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC07050919A58DD500984A5E /* Ocean_park_wiki.jpg in Resources */,
 				BC4827B019A2D5A200CF7904 /* Main.storyboard in Resources */,
-				CAF6338219A5720300C9BEE7 /* green_dust_scratch_@2X.png in Resources */,
 				BC4827B219A2D5A200CF7904 /* Images.xcassets in Resources */,
-				CAF6338319A5720300C9BEE7 /* green_dust_scratch.png in Resources */,
 				BC4827CA19A2DFAE00CF7904 /* smallCardBG@2x.png in Resources */,
+				BC07050B19A58EEC00984A5E /* Ocean_park_wiki-2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
