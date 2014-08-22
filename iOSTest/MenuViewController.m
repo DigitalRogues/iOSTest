@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.hidesBackButton = YES;
+    //self.navigationItem.hidesBackButton = YES;
     
     [self buildHamburger];
    
@@ -26,12 +26,58 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:NO];
+    //set bool for text changing
+    self.labelBool = YES;
+    [self buildBlur];
+    
+   
+   
+    
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:NO];
-     [self setupAnimators];
-    self.labelBool = YES;
+    self.textLabel = [[LTMorphingLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [self.view addSubview:self.textLabel];
+    self.textLabel.text = @"Hello";
+    [self startTimer];
+}
+
+
+- (void)startTimer
+{
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2
+                                             target:self
+                                           selector:@selector(loopText)
+                                           userInfo:nil
+                                            repeats:YES];
+    [timer fire];
     
+}
+
+-(void)loopText
+{
+    
+    if (self.labelBool == YES)
+    {
+        self.textLabel.text = @"Envoy";
+        self.labelBool = NO;
+    }
+    
+    else{
+        self.textLabel.text = @"Hello";
+        self.labelBool = YES;
+
+    }
+    
+}
+
+-(void)buildBlur
+{
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"colorful_reef.jpg"]];
     NSString *deviceType = [UIDevice currentDevice].model;
     if([deviceType isEqualToString:@"iPhone"])
@@ -45,53 +91,7 @@
     [self.view addSubview:self.blurView];
     [self.view sendSubviewToBack:self.blurView];
 
-    
 }
-
--(void)setupAnimators
-{
-  
- 
-    
-    ///creat amin animator object
-    self.animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.animator.delegate = self;
-    
-    //create gravity object and add it to animator
-    self.gravity = [[UIGravityBehavior alloc] initWithItems:@[self.textLabel]];
-    [self.animator addBehavior:self.gravity];
-    
-    
-    //create collision object (and set options) so items can be added ot it later. and add to animator
-    self.collision = [[UICollisionBehavior alloc] initWithItems:@[self.textLabel]];
-    self.collision.translatesReferenceBoundsIntoBoundary = YES;
-    self.collision.collisionDelegate = self;
-    [self.animator addBehavior:self.collision];
-    
-    
-    self.itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.textLabel]];
-    self.itemBehavior.elasticity = 1.0;
-    [self.animator addBehavior:self.itemBehavior];
-
-    
-
-}
-
-- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item
-   withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p {
-     //NSLog(@"Boundary contact occurred - %@", identifier);
-     //NSLog(@"POINT contact occurred - %f", p.y);
-    if (self.labelBool == YES) {
-        self.textLabel.text = @"Envoy";
-        self.labelBool = NO;
-    }
-    else{
-        self.textLabel.text = @"Hello";
-        self.labelBool = YES;
-
-    }
-    
-    }
 
 
 -(void)buildHamburger
@@ -99,22 +99,36 @@
     self.menuButton = [[FRDLivelyButton alloc] initWithFrame:CGRectMake(0,0,36,28)];
     [self.menuButton setStyle:kFRDLivelyButtonStyleClose animated:YES];
     [self.menuButton addTarget:self action:@selector(hamburgerAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:self.menuButton];
-    self.navigationItem.rightBarButtonItem = buttonItem;
+    [self.view addSubview:self.menuButton];
+    self.menuButton.translatesAutoresizingMaskIntoConstraints = NO;
     
+    NSArray *upperConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_menuButton]"
+                                                                       options:0
+                                                                       metrics:nil
+                                                                         views:NSDictionaryOfVariableBindings(_menuButton)];
+    
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_menuButton]-20-|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:NSDictionaryOfVariableBindings(_menuButton)];
+    
+    
+    [self.view addConstraints:constraints];
+    [self.view addConstraints:upperConstraint];
 }
 
 -(void)hamburgerAction
 {
         [self.menuButton setStyle:kFRDLivelyButtonStyleHamburger animated:YES];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
     
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

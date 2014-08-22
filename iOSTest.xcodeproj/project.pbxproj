@@ -18,6 +18,19 @@
 		BC4827BE19A2D5A300CF7904 /* iOSTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827BD19A2D5A300CF7904 /* iOSTestTests.m */; };
 		BC4827CA19A2DFAE00CF7904 /* smallCardBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */; };
 		BCBC06AE19A6F912007232E8 /* colorful_reef.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCBC06AD19A6F912007232E8 /* colorful_reef.jpg */; };
+		BCBC06CB19A70424007232E8 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C219A70424007232E8 /* LTEasing.swift */; };
+		BCBC06CC19A70424007232E8 /* NSString+LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C319A70424007232E8 /* NSString+LTMorphingLabel.swift */; };
+		BCBC06CD19A70424007232E8 /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C419A70424007232E8 /* LTMorphingLabel.swift */; };
+		BCBC06CE19A70424007232E8 /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C519A70424007232E8 /* LTMorphingLabel+Evaporate.swift */; };
+		BCBC06CF19A70424007232E8 /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C619A70424007232E8 /* LTMorphingLabel+Fall.swift */; };
+		BCBC06D019A70424007232E8 /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C719A70424007232E8 /* LTMorphingLabel+Pixelate.swift */; };
+		BCBC06D119A70424007232E8 /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C819A70424007232E8 /* LTMorphingLabel+Sparkle.swift */; };
+		BCBC06D219A70424007232E8 /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06C919A70424007232E8 /* LTMorphingLabel+Burn.swift */; };
+		BCBC06D319A70424007232E8 /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC06CA19A70424007232E8 /* LTMorphingLabel+Anvil.swift */; };
+		BCBC06D819A70434007232E8 /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBC06D419A70434007232E8 /* Fire.png */; };
+		BCBC06D919A70434007232E8 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBC06D519A70434007232E8 /* Sparkle.png */; };
+		BCBC06DA19A70434007232E8 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBC06D619A70434007232E8 /* Smoke.png */; };
+		BCBC06DB19A70434007232E8 /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBC06D719A70434007232E8 /* Fragment.png */; };
 		CAF6337F19A5296300C9BEE7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF6337E19A5296300C9BEE7 /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +63,20 @@
 		BC4827BD19A2D5A300CF7904 /* iOSTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTestTests.m; sourceTree = "<group>"; };
 		BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallCardBG@2x.png"; sourceTree = "<group>"; };
 		BCBC06AD19A6F912007232E8 /* colorful_reef.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colorful_reef.jpg; sourceTree = "<group>"; };
+		BCBC06C119A70423007232E8 /* iOSTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		BCBC06C219A70424007232E8 /* LTEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEasing.swift; sourceTree = "<group>"; };
+		BCBC06C319A70424007232E8 /* NSString+LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+LTMorphingLabel.swift"; sourceTree = "<group>"; };
+		BCBC06C419A70424007232E8 /* LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingLabel.swift; sourceTree = "<group>"; };
+		BCBC06C519A70424007232E8 /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		BCBC06C619A70424007232E8 /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
+		BCBC06C719A70424007232E8 /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		BCBC06C819A70424007232E8 /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		BCBC06C919A70424007232E8 /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
+		BCBC06CA19A70424007232E8 /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		BCBC06D419A70434007232E8 /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		BCBC06D519A70434007232E8 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
+		BCBC06D619A70434007232E8 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		BCBC06D719A70434007232E8 /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
 		CA33EC8419A6A10100BDF417 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CAF6337D19A5296300C9BEE7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		CAF6337E19A5296300C9BEE7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -127,11 +154,13 @@
 		BC4827A419A2D5A200CF7904 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BCBC06DC19A7043A007232E8 /* LTMorphing */,
 				BCBC06AD19A6F912007232E8 /* colorful_reef.jpg */,
 				BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */,
 				BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */,
 				BC4827A519A2D5A200CF7904 /* Info.plist */,
 				BC4827A619A2D5A200CF7904 /* main.m */,
+				BCBC06C119A70423007232E8 /* iOSTest-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -151,6 +180,26 @@
 				BC4827BC19A2D5A300CF7904 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCBC06DC19A7043A007232E8 /* LTMorphing */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC06C219A70424007232E8 /* LTEasing.swift */,
+				BCBC06C319A70424007232E8 /* NSString+LTMorphingLabel.swift */,
+				BCBC06C419A70424007232E8 /* LTMorphingLabel.swift */,
+				BCBC06C519A70424007232E8 /* LTMorphingLabel+Evaporate.swift */,
+				BCBC06C619A70424007232E8 /* LTMorphingLabel+Fall.swift */,
+				BCBC06C719A70424007232E8 /* LTMorphingLabel+Pixelate.swift */,
+				BCBC06C819A70424007232E8 /* LTMorphingLabel+Sparkle.swift */,
+				BCBC06C919A70424007232E8 /* LTMorphingLabel+Burn.swift */,
+				BCBC06CA19A70424007232E8 /* LTMorphingLabel+Anvil.swift */,
+				BCBC06D419A70434007232E8 /* Fire.png */,
+				BCBC06D519A70434007232E8 /* Sparkle.png */,
+				BCBC06D619A70434007232E8 /* Smoke.png */,
+				BCBC06D719A70434007232E8 /* Fragment.png */,
+			);
+			name = LTMorphing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +287,11 @@
 				BC4827B019A2D5A200CF7904 /* Main.storyboard in Resources */,
 				BC4827B219A2D5A200CF7904 /* Images.xcassets in Resources */,
 				BC4827CA19A2DFAE00CF7904 /* smallCardBG@2x.png in Resources */,
+				BCBC06DA19A70434007232E8 /* Smoke.png in Resources */,
+				BCBC06D819A70434007232E8 /* Fire.png in Resources */,
 				BC07050B19A58EEC00984A5E /* Ocean_park_wiki-2.jpg in Resources */,
+				BCBC06D919A70434007232E8 /* Sparkle.png in Resources */,
+				BCBC06DB19A70434007232E8 /* Fragment.png in Resources */,
 				BCBC06AE19A6F912007232E8 /* colorful_reef.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,9 +343,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBC06CE19A70424007232E8 /* LTMorphingLabel+Evaporate.swift in Sources */,
+				BCBC06D119A70424007232E8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				BC4827AD19A2D5A200CF7904 /* ViewController.m in Sources */,
+				BCBC06CD19A70424007232E8 /* LTMorphingLabel.swift in Sources */,
+				BCBC06CB19A70424007232E8 /* LTEasing.swift in Sources */,
+				BCBC06D319A70424007232E8 /* LTMorphingLabel+Anvil.swift in Sources */,
 				BC4827AA19A2D5A200CF7904 /* AppDelegate.m in Sources */,
 				BC4827A719A2D5A200CF7904 /* main.m in Sources */,
+				BCBC06D219A70424007232E8 /* LTMorphingLabel+Burn.swift in Sources */,
+				BCBC06CC19A70424007232E8 /* NSString+LTMorphingLabel.swift in Sources */,
+				BCBC06CF19A70424007232E8 /* LTMorphingLabel+Fall.swift in Sources */,
+				BCBC06D019A70424007232E8 /* LTMorphingLabel+Pixelate.swift in Sources */,
 				CAF6337F19A5296300C9BEE7 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
