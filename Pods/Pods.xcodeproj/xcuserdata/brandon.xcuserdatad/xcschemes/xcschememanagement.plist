@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-iOSTest-VBFPopFlatButton.xcscheme</key>
+		<key>Pods-iOSTest-FRDLivelyButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-iOSTest-FXBlurView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-iOSTest-iCarousel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-iOSTest-pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>088E35FD179E4B869DCC945F</key>
+		<key>1AE699AD1EE6470CB7F21B3C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4749041677F41EEA362CACA</key>
+		<key>7C3BAC2049D6453B9986671A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4CAD7D7F8384AC6A65D277F</key>
+		<key>9280F85C426C48979423BD6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC2EE7D3206541748AF6F271</key>
+		<key>C5CC9CF10E6E4B049667719B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

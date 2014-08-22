@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 
+
 @interface MenuViewController ()
 
 @end
@@ -20,10 +21,61 @@
     self.navigationItem.hidesBackButton = YES;
     
     [self buildHamburger];
-    //[self setUpConstraints];
+   
+
 
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:NO];
+     [self setupAnimators];
+    self.labelBool = YES;
+}
+
+-(void)setupAnimators
+{
+  
+ 
+    
+    ///creat amin animator object
+    self.animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+    self.animator.delegate = self;
+    
+    //create gravity object and add it to animator
+    self.gravity = [[UIGravityBehavior alloc] initWithItems:@[self.textLabel]];
+    [self.animator addBehavior:self.gravity];
+    
+    
+    //create collision object (and set options) so items can be added ot it later. and add to animator
+    self.collision = [[UICollisionBehavior alloc] initWithItems:@[self.textLabel]];
+    self.collision.translatesReferenceBoundsIntoBoundary = YES;
+    self.collision.collisionDelegate = self;
+    [self.animator addBehavior:self.collision];
+    
+    
+    self.itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.textLabel]];
+    self.itemBehavior.elasticity = 1.0;
+    [self.animator addBehavior:self.itemBehavior];
+
+    
+
+}
+
+- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item
+   withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p {
+     NSLog(@"Boundary contact occurred - %@", identifier);
+    if (self.labelBool == YES) {
+        self.textLabel.text = @"Envoy";
+        self.labelBool = NO;
+    }
+    else{
+        self.textLabel.text = @"Hello";
+        self.labelBool = YES;
+
+    }
+    
+    }
 
 
 -(void)buildHamburger
@@ -43,62 +95,6 @@
     
 }
 
-//-(void)buildHamburger
-//{
-//    self.menuButton  = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(275, 20, 30, 30)
-//                                                   buttonType:buttonCloseType
-//                                                  buttonStyle:buttonRoundedStyle];
-//    self.menuButton.roundBackgroundColor = [UIColor whiteColor];
-//    self.menuButton.lineThickness = 2;
-//    self.menuButton.linesColor = [UIColor blueColor];
-//    [self.menuButton addTarget:self
-//                        action:@selector(menuButtonPressed)
-//              forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:self.menuButton];
-//}
-//
-//-(void)setUpConstraints
-//{
-//    
-//    
-//    
-//    self.menuButton.translatesAutoresizingMaskIntoConstraints = NO;
-//    NSArray *upperConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_menuButton]"
-//                                                                       options:0
-//                                                                       metrics:nil
-//                                                                         views:NSDictionaryOfVariableBindings(_menuButton)];
-//    
-//    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_menuButton]-20-|"
-//                                                                   options:0
-//                                                                   metrics:nil
-//                                                                     views:NSDictionaryOfVariableBindings(_menuButton)];
-//    
-//    
-//    [self.view addConstraints:constraints];
-//    [self.view addConstraints:upperConstraint];
-//    
-//}
-//
-//
-//-(void)menuButtonPressed
-//{
-//    if (self.menuButton.currentButtonType == buttonMenuType) {
-//        self.menuButton.currentButtonType = buttonCloseType;
-//        [self.menuButton animateToType:buttonCloseType];
-//        [self dismissViewControllerAnimated:YES completion:^{
-//            
-//        }];
-//    }
-//    
-//    else if (self.menuButton.currentButtonType == buttonCloseType)
-//    {
-//        self.menuButton.currentButtonType = buttonMenuType;
-//        [self.menuButton animateToType:buttonMenuType];
-//        [self dismissViewControllerAnimated:YES completion:^{
-//            
-//        }];
-//    }
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

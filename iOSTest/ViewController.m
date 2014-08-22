@@ -294,15 +294,15 @@
     
 
     double newAlpha = self.envoyLabel.alpha;
-    if (translation.y >=0)
+    if (translation.y <0)
     {   //NSLog(@"Down");
-        newAlpha = MIN(newAlpha + 0.1,2.0);
+        newAlpha = MIN(newAlpha + 0.04,1.0);
         self.envoyLabel.alpha = newAlpha;
     }
-    else if (translation.y < 0)
+    else if (translation.y > 0)
     {
         //NSLog(@"Up");
-        newAlpha = MAX(newAlpha - 0.4,0);
+        newAlpha = MAX(newAlpha - 0.04,0);
         self.envoyLabel.alpha = newAlpha;
     }
    

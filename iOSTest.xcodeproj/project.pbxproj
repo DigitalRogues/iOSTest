@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0D3497F5736A4581B2E16BE6 /* libPods-iOSTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 177173797F5A4AC5BB36169E /* libPods-iOSTest.a */; };
 		BC07050519A5844000984A5E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC07050419A5844000984A5E /* Accelerate.framework */; };
-		BC07050919A58DD500984A5E /* Ocean_park_wiki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC07050819A58DD500984A5E /* Ocean_park_wiki.jpg */; };
 		BC07050B19A58EEC00984A5E /* Ocean_park_wiki-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */; };
 		BC4827A719A2D5A200CF7904 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827A619A2D5A200CF7904 /* main.m */; };
 		BC4827AA19A2D5A200CF7904 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827A919A2D5A200CF7904 /* AppDelegate.m */; };
@@ -35,7 +34,6 @@
 		177173797F5A4AC5BB36169E /* libPods-iOSTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FEF9BC55484B4EA7C2E30C /* Pods-iOSTest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTest.xcconfig"; path = "Pods/Pods-iOSTest.xcconfig"; sourceTree = "<group>"; };
 		BC07050419A5844000984A5E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		BC07050819A58DD500984A5E /* Ocean_park_wiki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ocean_park_wiki.jpg; sourceTree = "<group>"; };
 		BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ocean_park_wiki-2.jpg"; sourceTree = "<group>"; };
 		BC4827A119A2D5A200CF7904 /* iOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4827A519A2D5A200CF7904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +48,7 @@
 		BC4827BC19A2D5A300CF7904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC4827BD19A2D5A300CF7904 /* iOSTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTestTests.m; sourceTree = "<group>"; };
 		BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallCardBG@2x.png"; sourceTree = "<group>"; };
+		CA33EC8419A6A10100BDF417 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CAF6337D19A5296300C9BEE7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		CAF6337E19A5296300C9BEE7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +76,7 @@
 		7A23D6A5CCC64CBD80614BBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA33EC8419A6A10100BDF417 /* QuartzCore.framework */,
 				BC07050419A5844000984A5E /* Accelerate.framework */,
 				177173797F5A4AC5BB36169E /* libPods-iOSTest.a */,
 			);
@@ -126,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */,
-				BC07050819A58DD500984A5E /* Ocean_park_wiki.jpg */,
 				BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */,
 				BC4827A519A2D5A200CF7904 /* Info.plist */,
 				BC4827A619A2D5A200CF7904 /* main.m */,
@@ -233,7 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC07050919A58DD500984A5E /* Ocean_park_wiki.jpg in Resources */,
 				BC4827B019A2D5A200CF7904 /* Main.storyboard in Resources */,
 				BC4827B219A2D5A200CF7904 /* Images.xcassets in Resources */,
 				BC4827CA19A2DFAE00CF7904 /* smallCardBG@2x.png in Resources */,
@@ -362,6 +360,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = iOSTest;
+				PRODUCT_NAME = iOSTest;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -397,6 +397,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = iOSTest;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -409,10 +410,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iOSTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSTest/iOSTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -422,10 +426,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iOSTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSTest/iOSTest-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -3,9 +3,10 @@
 
 target "iOSTest" do
 pod 'iCarousel'
-#pod 'VBFPopFlatButton'
+
 pod 'FRDLivelyButton'
 pod 'FXBlurView'
+
 end
 
 target "iOSTestTests" do
