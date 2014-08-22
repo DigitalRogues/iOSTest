@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FRDLivelyButton.h>
 #import <FXBlurView.h>
-#import "iOSTest-Swift.h"
+#import <TOMSMorphingLabel.h>
 @interface MenuViewController : UIViewController <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
 
@@ -17,7 +17,7 @@
 @property (nonatomic) UIDynamicAnimator* animator;
 @property (strong) UICollisionBehavior *collision;
 @property (strong) UIGravityBehavior *gravity;
-@property (strong, nonatomic) IBOutlet LTMorphingLabel *textLabel;
+@property (strong, nonatomic) IBOutlet TOMSMorphingLabel *textLabel;
 @property (strong) UIDynamicItemBehavior *itemBehavior;
 @property BOOL labelBool;
 @property (strong, nonatomic) IBOutlet FXBlurView *blurView;

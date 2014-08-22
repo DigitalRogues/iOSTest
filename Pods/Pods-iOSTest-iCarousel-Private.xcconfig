@@ -1,5 +1,5 @@
 #include "Pods-iOSTest-iCarousel.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/iCarousel" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FRDLivelyButton" "${PODS_ROOT}/Headers/FXBlurView" "${PODS_ROOT}/Headers/iCarousel"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/iCarousel" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FRDLivelyButton" "${PODS_ROOT}/Headers/FXBlurView" "${PODS_ROOT}/Headers/TOMSMorphingLabel" "${PODS_ROOT}/Headers/iCarousel"
 OTHER_LDFLAGS = -ObjC ${PODS_IOSTEST_ICAROUSEL_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}

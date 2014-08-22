@@ -41,16 +41,29 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:NO];
-    self.textLabel = [[LTMorphingLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [self.view addSubview:self.textLabel];
+    self.textLabel = [[TOMSMorphingLabel alloc] initWithFrame:CGRectMake(0, 0, 130, 100)];
+    self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:40];
+//    self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//    self.textLabel.numberOfLines = 0;
+   // [self.textLabel sizeToFit];
     self.textLabel.text = @"Hello";
+    [self.view addSubview:self.textLabel];
+    
+    
+    
+    
     [self startTimer];
 }
 
 
+-(void)labelConstraints
+{
+    
+}
+
 - (void)startTimer
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1
                                              target:self
                                            selector:@selector(loopText)
                                            userInfo:nil
