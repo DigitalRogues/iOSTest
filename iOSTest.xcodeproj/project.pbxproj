@@ -17,6 +17,7 @@
 		BC4827B219A2D5A200CF7904 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4827B119A2D5A200CF7904 /* Images.xcassets */; };
 		BC4827BE19A2D5A300CF7904 /* iOSTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4827BD19A2D5A300CF7904 /* iOSTestTests.m */; };
 		BC4827CA19A2DFAE00CF7904 /* smallCardBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */; };
+		BCBC06AE19A6F912007232E8 /* colorful_reef.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCBC06AD19A6F912007232E8 /* colorful_reef.jpg */; };
 		CAF6337F19A5296300C9BEE7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF6337E19A5296300C9BEE7 /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		BC4827BC19A2D5A300CF7904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC4827BD19A2D5A300CF7904 /* iOSTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTestTests.m; sourceTree = "<group>"; };
 		BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallCardBG@2x.png"; sourceTree = "<group>"; };
+		BCBC06AD19A6F912007232E8 /* colorful_reef.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colorful_reef.jpg; sourceTree = "<group>"; };
 		CA33EC8419A6A10100BDF417 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CAF6337D19A5296300C9BEE7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		CAF6337E19A5296300C9BEE7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		BC4827A419A2D5A200CF7904 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BCBC06AD19A6F912007232E8 /* colorful_reef.jpg */,
 				BC07050A19A58EEC00984A5E /* Ocean_park_wiki-2.jpg */,
 				BC4827C919A2DFAE00CF7904 /* smallCardBG@2x.png */,
 				BC4827A519A2D5A200CF7904 /* Info.plist */,
@@ -236,6 +239,7 @@
 				BC4827B219A2D5A200CF7904 /* Images.xcassets in Resources */,
 				BC4827CA19A2DFAE00CF7904 /* smallCardBG@2x.png in Resources */,
 				BC07050B19A58EEC00984A5E /* Ocean_park_wiki-2.jpg in Resources */,
+				BCBC06AE19A6F912007232E8 /* colorful_reef.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,6 @@
 @property (nonatomic,strong) NSMutableArray *itemsArray;
 @property (nonatomic,strong) UIPanGestureRecognizer *recognizer;
 @property (weak, nonatomic) IBOutlet UILabel *envoyLabel;
-//@property (strong, nonatomic) IBOutlet VBFPopFlatButton *menuButton;
 @property (nonatomic,strong) FRDLivelyButton *menuButton;
 @property (strong, nonatomic) IBOutlet FXBlurView *blurView;
 

@@ -77,15 +77,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="122" translatesAutoresizingMaskIntoConstraints="NO" id="ImF-L2-hPP">
-                                <rect key="frame" x="240" y="-75" width="121" height="29"/>
+                                <rect key="frame" x="240" y="3" width="121" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="ImF-L2-hPP" secondAttribute="centerY" constant="360.5" id="5f3-cd-F9y"/>
+                            <constraint firstAttribute="centerY" secondItem="ImF-L2-hPP" secondAttribute="centerY" constant="282.5" id="5f3-cd-F9y">
+                                <variation key="widthClass=regular" constant="333"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="ImF-L2-hPP" secondAttribute="centerX" id="fWq-v1-0bR"/>
                         </constraints>
                     </view>

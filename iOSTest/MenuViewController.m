@@ -31,6 +31,21 @@
     [super viewDidAppear:NO];
      [self setupAnimators];
     self.labelBool = YES;
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"colorful_reef.jpg"]];
+    NSString *deviceType = [UIDevice currentDevice].model;
+    if([deviceType isEqualToString:@"iPhone"])
+    {
+        self.blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, [[UIScreen mainScreen] bounds].size.width,[[UIScreen mainScreen] bounds].size.height)];
+    }
+    else {
+        self.blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, [[UIScreen mainScreen] bounds].size.height,[[UIScreen mainScreen] bounds].size.width)];
+    }
+    self.blurView.underlyingView = self.view;
+    [self.view addSubview:self.blurView];
+    [self.view sendSubviewToBack:self.blurView];
+
+    
 }
 
 -(void)setupAnimators
@@ -64,7 +79,8 @@
 
 - (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item
    withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p {
-     NSLog(@"Boundary contact occurred - %@", identifier);
+     //NSLog(@"Boundary contact occurred - %@", identifier);
+     //NSLog(@"POINT contact occurred - %f", p.y);
     if (self.labelBool == YES) {
         self.textLabel.text = @"Envoy";
         self.labelBool = NO;
