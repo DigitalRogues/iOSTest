@@ -73,28 +73,6 @@
 }
 
 
-//-(void)setUpConstraints
-//{
-//
-//    
-//    
-//    self.menuButton.translatesAutoresizingMaskIntoConstraints = NO;
-//    NSArray *upperConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[_menuButton]"
-//                                                                   options:0
-//                                                                   metrics:nil
-//                                                                     views:NSDictionaryOfVariableBindings(_menuButton)];
-//    
-//    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_menuButton]-20-|"
-//                                                                   options:0
-//                                                                   metrics:nil
-//                                                                     views:NSDictionaryOfVariableBindings(_menuButton)];
-//
-//    
-//    [self.view addConstraints:constraints];
-//    [self.view addConstraints:upperConstraint];
-//    
-//}
-
 -(void)buildHamburger
 {
     self.menuButton = [[FRDLivelyButton alloc] initWithFrame:CGRectMake(0,0,36,28)];
@@ -116,39 +94,6 @@
 }
 
 
-//-(void)buildHamburger
-//{
-//    self.menuButton  = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(275, 20, 30, 30)
-//                                                   buttonType:buttonMenuType
-//                                                  buttonStyle:buttonRoundedStyle];
-//    self.menuButton.roundBackgroundColor = [UIColor whiteColor];
-//    self.menuButton.lineThickness = 2;
-//    self.menuButton.linesColor = [UIColor blueColor];
-//    [self.menuButton addTarget:self
-//                        action:@selector(menuButtonPressed)
-//              forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:self.menuButton];
-//
-//}
-
-
-//-(void)menuButtonPressed
-//{
-//    if (self.menuButton.currentButtonType == buttonMenuType) {
-//        self.menuButton.currentButtonType = buttonCloseType;
-//        [self.menuButton animateToType:buttonCloseType];
-//        [self performSegueWithIdentifier:@"menuSegue" sender:nil];
-//        self.menuButton.currentButtonType = buttonMenuType;
-//         [self.menuButton animateToType:buttonMenuType];
-//
-//    }
-//    
-//    else if (self.menuButton.currentButtonType == buttonCloseType)
-//    {
-//        self.menuButton.currentButtonType = buttonMenuType;
-//        [self.menuButton animateToType:buttonMenuType];
-//    }
-//}
 
 #pragma mark - iCarousel Methods
 

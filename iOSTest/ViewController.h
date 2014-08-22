@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <iCarousel.h>
-//#import <VBFPopFlatButton.h>
 #import <FRDLivelyButton.h>
 #import <FXBlurView.h>
 

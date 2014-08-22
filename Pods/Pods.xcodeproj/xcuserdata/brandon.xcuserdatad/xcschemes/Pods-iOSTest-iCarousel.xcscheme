@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5CC9CF10E6E4B049667719B"
+               BlueprintIdentifier = "E202FB7E18334B42B360613C"
                BuildableName = "libPods-iOSTest-iCarousel.a"
                BlueprintName = "Pods-iOSTest-iCarousel"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -17,9 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    //self.navigationItem.hidesBackButton = YES;
-    
     [self buildHamburger];
    
 
@@ -43,13 +40,10 @@
     [super viewDidAppear:NO];
     self.textLabel = [[TOMSMorphingLabel alloc] initWithFrame:CGRectMake(0, 0, 130, 100)];
     self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:40];
-//    self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//    self.textLabel.numberOfLines = 0;
-   // [self.textLabel sizeToFit];
     self.textLabel.text = @"Hello";
     [self.view addSubview:self.textLabel];
     
-    
+    [self labelConstraints];
     
     
     [self startTimer];
@@ -58,12 +52,27 @@
 
 -(void)labelConstraints
 {
+    self.textLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    UIView *superview = self.view;
+    NSDictionary *variables = NSDictionaryOfVariableBindings(_textLabel, superview);
+    NSArray *constraints =
+    [NSLayoutConstraint constraintsWithVisualFormat:@"V:[superview]-(<=1)-[_textLabel]"
+                                            options: NSLayoutFormatAlignAllCenterX
+                                            metrics:nil
+                                              views:variables];
+    [self.view addConstraints:constraints];
     
+    constraints =
+    [NSLayoutConstraint constraintsWithVisualFormat:@"H:[superview]-(<=1)-[_textLabel]"
+                                            options: NSLayoutFormatAlignAllCenterY
+                                            metrics:nil
+                                              views:variables];
+    [self.view addConstraints:constraints];
 }
 
 - (void)startTimer
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.5
                                              target:self
                                            selector:@selector(loopText)
                                            userInfo:nil
